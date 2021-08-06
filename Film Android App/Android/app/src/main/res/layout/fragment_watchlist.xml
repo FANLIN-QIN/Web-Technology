@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue">
+
+    <TextView
+        android:id="@+id/listfirst"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Nothing saved to Watchlist"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+       />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/watchrecycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>

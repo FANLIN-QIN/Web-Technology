@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="390dp"
+    android:layout_height="120dp"
+    android:layout_marginTop="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mreviewcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="15dp"
+        android:layout_marginLeft="15dp"
+        android:outlineSpotShadowColor="@android:color/holo_blue_light"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/reviewname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="3dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/reviewrating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="3dp"/>
+
+         <TextView
+             android:layout_width="20dp"
+             android:layout_height="wrap_content"
+             android:background="@drawable/ic_star"/>
+        </LinearLayout>
+
+            <TextView
+            android:id="@+id/reviewcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginTop="7dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:layout_marginLeft="3dp"
+            />
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

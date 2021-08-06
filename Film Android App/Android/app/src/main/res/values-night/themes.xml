@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.HW91" parent="Theme.AppCompat.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="Theme.HW91.Launcher">
+        <item name="android:windowBackground">@drawable/ic_luanch</item>
+    </style>
+</resources>

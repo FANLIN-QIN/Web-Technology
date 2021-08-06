@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/movietest"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue">
+
+    <ProgressBar
+        android:id="@+id/loadicon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:indeterminateTint="@android:color/holo_blue_bright">
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Loading...."
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="16dp"
+        ></TextView>
+
+    <FrameLayout
+        android:id="@+id/truedate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="70sp"
+            android:background="@color/blue"
+            android:translationZ="90dp">
+
+
+            <ImageView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginLeft="13sp"
+                android:layout_marginTop="3sp"
+                android:background="@drawable/ic_theaters_white_18dp" />
+
+            <TextView
+                android:layout_width="120sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="60sp"
+                android:layout_marginTop="15sp"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/bmovie"
+                android:layout_width="90sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="217sp"
+                android:layout_marginTop="15sp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="Movietag"
+                android:text="@string/tag1"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btv"
+                android:layout_width="110sp"
+                android:layout_height="40sp"
+                android:layout_marginLeft="310sp"
+                android:layout_marginTop="15sp"
+                android:backgroundTint="@android:color/transparent"
+                android:text="@string/tag2"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/Slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="310dp"
+                        android:layout_marginTop="60sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13sp"
+                        android:layout_marginTop="30sp"
+                        android:text="Top-Rated"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycleView"
+                            android:layout_width="match_parent"
+                            android:layout_height="160sp" />
+                    </androidx.core.widget.NestedScrollView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13sp"
+                        android:layout_marginTop="20sp"
+                        android:text="Popular"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycleView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="160sp" />
+                    </androidx.core.widget.NestedScrollView>
+
+                    <TextView
+                        android:id="@+id/mfoot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal"
+                        android:text="Powered by TMDB"
+                        android:textColor="@color/footer"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="Developed by Fanlin Qin"
+                        android:textColor="@color/footer"
+                        android:textSize="17dp" />
+
+
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+
+    </FrameLayout>
+
+
+</RelativeLayout>
+

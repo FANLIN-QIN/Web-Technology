@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".tvdetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/tvyoutube_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:autoPlay="false"
+                app:showFullScreenButton="true"
+                app:showYouTubeButton="true" />
+
+            <ImageView
+                android:id="@+id/tvplayimage"
+                android:layout_width="match_parent"
+                android:layout_height="230dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/title"
+                app:cardCornerRadius="7sp">
+
+                <TextView
+                    android:id="@+id/tvtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="10dp"
+                android:text="Overview"
+                android:textColor="@color/overview"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="vertical">
+
+                <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:id="@+id/tv_overview"
+                    android:layout_width="375dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:colorClickableText="@android:color/darker_gray"
+                    app:trimCollapsedText="Show less"
+                    app:trimExpandedText="Show more"
+                    app:trimLength="170"
+                    app:trimMode="trimModeLength" />
+
+                <TextView
+                    android:id="@+id/getitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="10sp"
+                    android:text="Genres"
+                    android:textColor="@color/overview"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvgenres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/yeartitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="10sp"
+                    android:text="Year"
+                    android:textColor="@color/overview"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/yeartv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="5sp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="10sp">
+
+                    <TextView
+                        android:id="@+id/addtv"
+                        android:layout_width="25sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:background="@drawable/ic_baseline_add_circle_outline_24" />
+
+                    <TextView
+                        android:id="@+id/removetv"
+                        android:layout_width="25sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:background="@drawable/ic_baseline_remove_circle_outline_24"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvdetailfb"
+                        android:layout_width="25sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:background="@drawable/ic_baseline_facebook_24" />
+
+                    <TextView
+                        android:id="@+id/tvdetailtw"
+                        android:layout_width="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:background="@drawable/ic_twitter_logo_dialog" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvcasttitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="10sp"
+                    android:text="Cast"
+                    android:textColor="@color/overview"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tvCastrecycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp" />
+
+                <TextView
+                    android:id="@+id/tvretitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="10sp"
+                    android:text="Reviews"
+                    android:textColor="@color/overview"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tvreviewrecycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp" />
+
+                <TextView
+                    android:id="@+id/tvrecomtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="10sp"
+                    android:text="Recommended Picks"
+                    android:textColor="@color/overview"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/tvrecommrecycleView"
+                        android:layout_width="match_parent"
+                        android:layout_height="160sp" />
+                </androidx.core.widget.NestedScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

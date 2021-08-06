@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="160dp"
+    android:layout_marginTop="14dp">
+
+    <ImageView
+        android:id="@+id/watchimage"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
+        />
+    <TextView
+        android:id="@+id/listtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/white"
+        android:shadowColor="@color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="0.3"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/watchclick"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/list_remove"
+        />
+
+</RelativeLayout>
