@@ -1,0 +1,33 @@
+<h3 *ngIf="!mobile">Trending Movies</h3>
+<p *ngIf="mobile" style="font-size: 35px;color: white;margin-left: 45px;">Trending Movies</p>
+
+<div *ngIf = "trendmdata">
+    <!-- Mobile section  -->
+    <ngb-carousel *ngIf="mobile"  [interval]=0 id="mobile">
+        <ng-template ngbSlide  *ngFor="let imga of trendmdata">
+            <div class="mm1">
+                    <a routerLink="/watch/movie/{{imga.id}}"><img id="mobileimg" src="{{imga.poster_path}}"></a>
+                    <div class="mobilename">  
+                        <p style="color: white;font-size:15px">{{imga.title}}</p>
+                    </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+
+    <!-- Desktop section : multiple images per slide -->
+    <ngb-carousel *ngIf="!mobile"  [interval]=0>
+        <ng-template ngbSlide  *ngFor="let group of formatted">
+            <div class="bb1">
+                <div class="cc" style="display: inline-block;" *ngFor="let img of group">
+                    <a routerLink="/watch/movie/{{img.id}}"><img class="" src="{{img.poster_path}}"></a>
+                  
+                    <div class="titlename">  
+                        <p style="color: white;font-size:12px">{{img.title}}</p>
+                    </div>   
+                    
+                </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+
+</div>

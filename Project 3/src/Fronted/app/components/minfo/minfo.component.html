@@ -1,0 +1,300 @@
+<div style="height: 40px;color:#050a30">aaa</div>
+<div *ngIf="!mobile">
+<div *ngIf ="mvediodata" id="vdiv">
+  <div *ngFor="let v of mvediodata" class="vedio">
+    <youtube-player 
+     videoId="{{v.key}}" 
+     suggestedQuality="highres" 
+     [height]="400" 
+     [width]="600"
+    >
+    </youtube-player>
+  </div>
+</div> 
+
+<div *ngIf="mdetail" id="dediv">
+   <div *ngFor="let de of mdetail" class="detail">
+      <div id="name">{{de.title}}</div>
+      <div id="tagline">{{de.tagline}}</div>
+      <div id="year">{{year}} &nbsp; | &nbsp; &#9733;&nbsp;&nbsp;{{de.vote_average}} | {{duration}}</div>
+      <div id="genres">
+        <div style="display: inline-block;">Genres :&nbsp; </div>
+        <div *ngFor="let g of genres" style="display: inline-block;font-weight:lighter; color:#d4d4d4">{{g}}</div>
+      </div>
+      <div id="language">
+        <div style="display: inline-block;">Spoken Languages :&nbsp; </div>
+        <div *ngFor="let la of language" style="display: inline-block;font-weight:lighter; color:#d4d4d4">{{la}}</div>
+      </div>
+      <button id="addb" type="button" class="btn btn-primary" (click)="storage(de);opalert()" *ngIf="addbutton">Add to Watchlist</button>
+      <button id="removeb" type="button" class="btn btn-primary" (click)="remove();realert()" *ngIf="removebutton">Remove from Watchlist</button>
+      <ngb-alert id="adda" type="success" *ngIf="alert">
+         Added to watchlist.
+      </ngb-alert>
+      <ngb-alert id="removea" type="danger" *ngIf="alert2">
+        Removed from watchlist.
+     </ngb-alert>
+    
+    </div>
+</div>
+<div id="description">
+   <div style="font-size: 20px;margin-top: 13px;">Description</div>
+   <div *ngFor="let de of mdetail" style="font-size: 17px;color:#d4d4d4;margin-top: 3px;font-weight: 200;">{{de.overview}}</div>
+</div>
+<div id="share">
+  <div style="font-size: 20px;margin-top: 20px;">Share</div>
+  <div *ngFor="let de of mdetail" >
+   <div *ngFor="let v of mvediodata">
+    <a id="twitter" class="fa fa-twitter fa_custom fa-2x" href="https://twitter.com/intent/tweet?text=Watch {{de.title}}&url=https://www.youtube.com/watch?v={{v.key}}    &hashtags=USC&hashtags=CSCI571&hashtags=FightOn" target="_blank"></a>
+    <a id="facebook" class="fa fa-facebook-square fa_custom fa-2x" data-href="https://www.youtube.com/watch?v={{v.key}}" href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v={{v.key}}&src=sdkpreparse" target="_blank"></a>
+   </div>
+ </div>
+</div>
+</div>
+<!-- Mobile section -->
+<div *ngIf="mobile">
+  <div *ngIf ="mvediodata" id="movedio">
+    <div *ngFor="let v of mvediodata">
+      <youtube-player 
+       videoId="{{v.key}}" 
+       suggestedQuality="highres" 
+       [height]="280" 
+       [width]="350"
+      >
+      </youtube-player>
+    </div>
+  </div> 
+
+  <div *ngIf="mdetail">
+    <div *ngFor="let de of mdetail" class="mdetail">
+       <div id="mname">{{de.title}}</div>
+       <div id="mtagline">{{de.tagline}}</div>
+       <div id="myear">{{year}} &nbsp; | &nbsp; &#9733;&nbsp;&nbsp;{{de.vote_average}} | {{duration}}</div>
+       <div id="mgenres">
+         <div style="display: inline-block;">Genres :&nbsp; </div>
+         <div *ngFor="let g of genres" style="display: inline-block;font-weight:lighter; color:#d4d4d4">{{g}}</div>
+       </div>
+       <div id="mlanguage">
+         <div style="display: inline-block;">Spoken Languages :&nbsp; </div>
+         <div *ngFor="let la of language" style="display: inline-block;font-weight:lighter; color:#d4d4d4">{{la}}</div>
+       </div>
+       <button id="maddb" type="button" class="btn btn-primary" (click)="storage(de);opalert()" *ngIf="addbutton">Add to Watchlist</button>
+       <button id="mremoveb" type="button" class="btn btn-primary" (click)="remove();realert()" *ngIf="removebutton">Remove from Watchlist</button>
+       <ngb-alert id="madda" type="success" *ngIf="alert">
+          Added to watchlist.
+       </ngb-alert>
+       <ngb-alert id="mremovea" type="danger" *ngIf="alert2">
+         Removed from watchlist.
+      </ngb-alert>
+     
+     </div>
+ </div>
+ <div id="mdescription">
+  <div style="font-size: 20px;margin-top: 13px;">Description</div>
+  <div *ngFor="let de of mdetail" style="font-size: 17px;color:#d4d4d4;margin-top: 3px;">{{de.overview}}</div>
+</div>
+<div id="mshare">
+  <div style="font-size: 20px;margin-top: 20px;">Share</div>
+  <div *ngFor="let de of mdetail" >
+   <div *ngFor="let v of mvediodata">
+    <a id="twitter" class="fa fa-twitter fa_custom fa-2x" href="https://twitter.com/intent/tweet?text=Watch {{de.title}}&url=https://www.youtube.com/watch?v={{v.key}}    &hashtags=USC&hashtags=CSCI571&hashtags=FightOn" target="_blank"></a>
+    <a id="facebook" class="fa fa-facebook-square fa_custom fa-2x" data-href="https://www.youtube.com/watch?v={{v.key}}" href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v={{v.key}}&src=sdkpreparse" target="_blank"></a>
+   </div>
+ </div>
+</div>
+</div>
+
+
+
+<div *ngIf="!mobile">
+  <div id="Cast">Full Cast and Crew</div>
+  <div id="ccard">
+    <div class="card" *ngFor="let ca of mcast" (click) ="open(content);passdata(ca)" >
+       <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{ca.profile_path}}" alt="Card image cap">
+       <div class="card-body">
+         <div class="card-text">{{ca.name}}</div>
+         <div id="as">AS</div>
+         <div id="cc">{{ca.chararcter}}</div>
+       </div>
+    </div>
+   </div> 
+</div>
+
+<!-- Mobile section Cast-->
+<div *ngIf="mobile">
+  <div id="mCast">Full Cast and Crew</div>
+  <div id="mccard">
+    <div class="card" *ngFor="let ca of mcast" (click) ="open(content);passdata(ca)" >
+       <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{ca.profile_path}}" alt="Card image cap">
+       <div class="card-body">
+         <div class="card-text">{{ca.name}}</div>
+         <div id="as">AS</div>
+         <div id="cc">{{ca.chararcter}}</div>
+       </div>
+    </div>
+   </div> 
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss" style="overflow-y: initial">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{castname}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" *ngFor="let cade of castdedata" style="overflow-y: auto;height: 80vh;">
+    <img *ngIf="!mobile"id="modalimg" src="https://image.tmdb.org/t/p/w500/{{castpro}}">
+    <img *ngIf="mobile" id="mmodalimg" src="https://image.tmdb.org/t/p/w500/{{castpro}}">
+    
+    <div id="modalinfo"*ngIf="!mobile" >
+      <div *ngIf="cade.birthday">Birth: {{cade.birthday}}</div>
+      <div *ngIf="cade.birth_palce">Birth Place: {{cade.birth_palce}}</div>
+      <div *ngIf="cade.gender">Gender: {{cade.gender}}</div>
+      <div *ngIf="cade.homepage">Website: <a href="{{cade.homepage}}" target="_blank">{{cade.homepage}}</a></div>
+      <div *ngIf="cade.known_for_department">Known for: {{cade.known_for_department}}</div>
+      <div *ngIf="cade.also_know_as" style="width: 500px;" >Also Known as: {{cade.also_know_as}}</div>
+      <div style="margin-top: 8px;"*ngFor="let ex of castexdata" >
+        <a *ngIf="ex.imdb_id" href="https://www.imdb.com/name/{{ex.imdb_id}}" target="_blank"><fa-icon [icon]="Imdb" size="2x" id="imdb" ngbTooltip="Visit IMDB"></fa-icon></a>
+        <a *ngIf="ex.instagram_id" href="https://www.instagram.com/{{ex.instagram_id}}"  target="_blank"><fa-icon [icon]="Ins" size="2x" id="ins" ngbTooltip="Visit Instagram"></fa-icon></a>
+        <a *ngIf="ex.facebook_id" href="https://www.facebook.com/{{ex.facebook_id}}" target="_blank"><fa-icon [icon]="Face" size="2x" id="face2" ngbTooltip="Visit Facebook"></fa-icon></a>
+        <a *ngIf="ex.twitter_id" href="https://www.twitter.com/{{ex.twitter_id}}" target="_blank"><fa-icon [icon]="Twitter" size="2x" id="twitter2" ngbTooltip="Visit Twitter"></fa-icon></a> 
+      </div>
+    </div> 
+
+    <div id="mmodalinfo" *ngIf="mobile">
+      <div *ngIf="cade.birthday">Birth: {{cade.birthday}}</div>
+      <div *ngIf="cade.birth_palce">Birth Place: {{cade.birth_palce}}</div>
+      <div *ngIf="cade.gender">Gender: {{cade.gender}}</div>
+      <div *ngIf="cade.homepage">Website: <a href="{{cade.homepage}}" target="_blank">{{cade.homepage}}</a></div>
+      <div *ngIf="cade.known_for_department">Known for: {{cade.known_for_department}}</div>
+      <div *ngIf="cade.also_know_as" style="width: 350px;" >Also Known as: {{cade.also_know_as}}</div>
+      <div style="margin-top: 8px;"*ngFor="let ex of castexdata" >
+        <a *ngIf="ex.imdb_id" href="https://www.imdb.com/name/{{ex.imdb_id}}" target="_blank"><fa-icon [icon]="Imdb" size="2x" id="imdb" ngbTooltip="Visit IMDB"></fa-icon></a>
+        <a *ngIf="ex.instagram_id" href="https://www.instagram.com/{{ex.instagram_id}}"  target="_blank"><fa-icon [icon]="Ins" size="2x" id="ins" ngbTooltip="Visit Instagram"></fa-icon></a>
+        <a *ngIf="ex.facebook_id" href="https://www.facebook.com/{{ex.facebook_id}}" target="_blank"><fa-icon [icon]="Face" size="2x" id="face2" ngbTooltip="Visit Facebook"></fa-icon></a>
+        <a *ngIf="ex.twitter_id" href="https://www.twitter.com/{{ex.twitter_id}}" target="_blank"><fa-icon [icon]="Twitter" size="2x" id="twitter2" ngbTooltip="Visit Twitter"></fa-icon></a> 
+      </div>
+    </div>
+     
+    <div *ngIf="!mobile">
+    <div *ngIf="cade.biography" id="bio">Biography</div>
+    <div *ngIf="cade.biography" style="width: 750px;">{{cade.biography}}</div>
+    </div>
+
+    <div *ngIf="mobile">
+      <div *ngIf="cade.biography" id="mbio">Biography</div>
+      <div *ngIf="cade.biography" style="width: 350px;">{{cade.biography}}</div>
+    </div>
+
+
+  </div>
+</ng-template>
+
+
+
+<!-- Desktop section Review-->
+<div *ngIf="!mobile">
+  <div id="review" *ngIf="relength !== 0">Reviews &nbsp; <span style="color: gray;">{{relength}}</span></div>
+  <div id="reblock" *ngFor="let re of mreview">
+    <img id="reimg" src="{{re.avatar_path}}">
+    <div id="reinfo">
+         <div style="font-size: 22px;font-weight: 600;display: inline-block;"> A review created by {{re.authoe}}</div>
+         <div id="rerate">&#9733; {{re.rating}}</div>
+         <div style="color:gray; font-size:15px;margin-top:30px;">Written by {{re.authoe}} on {{re.created_at}}</div>
+         <div id="recontent">{{re.content}}</div>
+         <div style="margin-top: 17px;"><a href="{{re.link}}" target="_blank" style="color:purple;text-decoration:underline">Read the rest</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile section Review-->
+<div *ngIf="mobile">
+  <div id="mreview" *ngIf="relength !== 0">Reviews &nbsp; <span style="color: gray;">{{relength}}</span></div>
+  <div id="mreblock" *ngFor="let re of mreview">
+    <img id="mreimg" src="{{re.avatar_path}}">
+    <div id="mreinfo">
+         <div style="font-size: 25px;font-weight: 600;margin-left:15px"> A review created by {{re.authoe}}</div>
+         <div id="mrerate">&#9733; {{re.rating}}</div>
+         <div style="color:gray; font-size:17px;margin-top:30px;">Written by {{re.authoe}} on {{re.created_at}}</div>
+         <div id="mrecontent">{{re.content}}</div>
+         <div style="margin-top: 17px;"><a href="{{re.link}}" target="_blank" style="color:purple;text-decoration:underline">Read the rest</a></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf = "mrecomdata">
+<h3 *ngIf="!mobile">Recommended Movies</h3>
+<p *ngIf="mobile" style="font-size: 40px;color: white;margin-left: 45px;margin-top: 35px;">Recommended Movies</p>
+</div>
+<div *ngIf = "mrecomdata">
+  <!-- Mobile section  -->
+  <ngb-carousel *ngIf="mobile"  [interval]=0 id="mobile">
+    <ng-template ngbSlide  *ngFor="let imga of mrecomdata">
+        <div class="mm1">
+                <a routerLink="/watch/movie/{{imga.id}}"><img id="mobileimg" src="{{imga.poster_path}}"></a>
+                <div class="mobilename">  
+                    <p style="color: white;font-size:18px">{{imga.title}}</p>
+                </div>
+        </div>
+    </ng-template>
+</ngb-carousel>
+  <!-- Desktop section : multiple images per slide -->
+  <ngb-carousel *ngIf="!mobile"  [interval]=0>
+      <ng-template ngbSlide  *ngFor="let group of mrecomformatted">
+          <div class="bb1">
+              <div class="cc" style="display: inline-block;" *ngFor="let img of group">
+                <a routerLink="/watch/movie/{{img.id}}"><img class="" src="{{img.poster_path}}"></a>
+                
+                  <div class="titlename">  
+                      <p style="color: white;font-size:12px">{{img.title}}</p>
+                  </div>   
+                  
+              </div>
+          </div>
+      </ng-template>
+  </ngb-carousel>
+</div>
+
+<div *ngIf = "msidata">
+  <h3 *ngIf="!mobile">Similar Movies</h3>
+  <p *ngIf="mobile" style="font-size: 40px;color: white;margin-left: 45px; margin-top: 35px;">Similar Movies</p>
+</div>
+<div *ngIf="msidata">
+  <!-- Mobile section  -->
+  <ngb-carousel *ngIf="mobile"  [interval]=0 id="mobile">
+    <ng-template ngbSlide  *ngFor="let imga of msidata">
+        <div class="mm1">
+                <a routerLink="/watch/movie/{{imga.id}}"><img id="mobileimg" src="{{imga.poster_path}}"></a>
+                <div class="mobilename">  
+                    <p style="color: white;font-size:18px">{{imga.title}}</p>
+                </div>
+        </div>
+    </ng-template>
+  </ngb-carousel>
+  
+  <!-- Desktop section : multiple images per slide -->
+  <ngb-carousel *ngIf="!mobile"  [interval]=0>
+      <ng-template ngbSlide  *ngFor="let group of msiformatted">
+          <div class="bb1">
+              <div class="cc" style="display: inline-block;" *ngFor="let img of group">
+                <a routerLink="/watch/movie/{{img.id}}"><img class="" src="{{img.poster_path}}"></a>
+                
+                  <div class="titlename">  
+                      <p style="color: white;font-size:12px">{{img.title}}</p>
+                  </div>   
+                  
+              </div>
+          </div>
+      </ng-template>
+  </ngb-carousel>
+</div>
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+

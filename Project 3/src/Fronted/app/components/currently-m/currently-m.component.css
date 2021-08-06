@@ -1,0 +1,56 @@
+#desktop{
+    width: 1000px;
+    margin-left: 100px;
+    height:350px;
+    margin-top:50px;
+    outline:none;
+}
+.picsum-img-wrapper{
+    width: 900px;
+    height:350px;
+ }
+
+#dimg{
+    width: 900px;
+    height:350px; 
+    margin-left: 50px;
+ }
+ #title{
+     opacity: 0;
+ }
+ #desktop:hover img{
+    transform:scale(1.05)
+ }
+
+ #desktop:hover #title{
+    opacity: 1;
+ }
+ 
+ #mobile{
+    width:350px;
+    height:200px;
+    margin-left: 27px;
+    outline:none;
+    margin-top:20px;
+ }
+
+ #mobileimg{
+    width: 350px;
+    height:200px; 
+ }
+
+ #mimg{
+    width: 350px;
+    height:200px; 
+    
+ }
+
+ #mobile:hover #mimg{
+    transform:scale(1.05)
+ }
+
+
+ 
+
+
+

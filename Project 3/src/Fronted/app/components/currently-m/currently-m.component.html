@@ -1,0 +1,31 @@
+<ngb-carousel *ngIf="mobile" id="mobile" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let d of data; index as i">
+        <a routerLink="/watch/movie/{{d.id}}">
+        <div id="mobileimg" >
+          <img id="mimg" src="https://image.tmdb.org/t/p/w500{{d.backdrop_path}}" alt="My image {{i + 1}} description">
+        </div>
+        </a>
+        <div class="carousel-caption" id = "mobiletitle" style="background: black;width: 944px;height:60px;text-align:left; left: 1px;bottom: 0px;box-shadow: 0 0 5px 2px black;">
+            <p style="margin-left:3px;color: white;">{{d.title}}</p>
+        </div>
+       
+    </ng-template>
+</ngb-carousel>
+
+
+<ngb-carousel *ngIf="!mobile"  id="desktop" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let d of data; index as i">
+        <a routerLink="/watch/movie/{{d.id}}">
+        <div class="picsum-img-wrapper" >
+          <img id="dimg" src="https://image.tmdb.org/t/p/w500{{d.backdrop_path}}" alt="My image {{i + 1}} description">
+        </div>
+        </a>
+        <div class="carousel-caption" id = "title" style="background: black;width: 944px;height:60px;text-align:left; left: 28px;bottom: 0px;box-shadow: 0 0 15px 10px black;">
+            <p style="margin-left:70px;color: white;">{{d.title}}</p>
+        </div>
+       
+    </ng-template>
+</ngb-carousel>
+
+
+

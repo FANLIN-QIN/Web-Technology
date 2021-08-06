@@ -1,0 +1,53 @@
+<div style="height: 30px;color:#050a30">aaa</div>
+<div *ngIf="!mobile">
+<div *ngIf="check2">
+    <h2 id="desklist">My WatchList</h2>
+    <div id="whole">
+            <div class="bb1" *ngFor="let group of formatted">
+                <div class="cc" style="display: inline-block;" *ngFor="let img of group">
+                    <a routerLink="/watch/{{img.type}}/{{img.id}}"><img class="desk" src="{{img.poster_path}}"></a>
+                  
+                    <div class="titlename">  
+                        <p style="color: white;font-size:12px">{{img.title}}</p>
+                    </div>   
+                    
+                </div>
+            </div>
+    </div>
+</div>
+<div style="height: 30px;color:#050a30">aaa</div>
+<div *ngIf="check">
+    <h1 id="deskno">No items found in WatchList.</h1>  
+</div>
+<div class="footer" >
+    <p style="color: white;text-align: center;">Powered by TMDB. Developed by Fanlin Qin.</p>
+</div>
+</div>
+
+<div *ngIf="mobile">
+
+    <div *ngIf="check2">
+        <p id="mobilelist">My WatchList</p>
+        <div id="mwhole">
+                    <div class="mcc" *ngFor="let imga of data">
+                        <a routerLink="/watch/{{imga.type}}/{{imga.id}}"><img class="mobileimg" src="{{imga.poster_path}}"></a>
+                        <div class="mtitlename">  
+                            <p style="color: white;font-size:20px">{{imga.title}}</p>
+                        </div>     
+                    </div> 
+        </div>
+        <div style="height: 140px;color:#050a30">aaa</div>
+        <div id="mfoot" >
+            <p style="color: white;text-align: center;">Powered by TMDB. Developed by Fanlin Qin.</p>
+        </div>
+    </div>
+    
+    <div *ngIf="check">
+        <h1 id="mobileno">No items found in WatchList.</h1>  
+        <div id="mfooter-no" >
+        <p style="color: white;text-align: center;">Powered by TMDB. Developed by Fanlin Qin.</p>
+       </div>
+    </div>
+    
+</div>
+
