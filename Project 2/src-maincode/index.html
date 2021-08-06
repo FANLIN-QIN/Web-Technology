@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body style="background-color: black;">
+   <style>
+      .tab-head{
+        float: left;
+        margin-left: 100px;
+        width: 150px;
+        margin-top: 15px;
+      }
+
+      .tab-head button{
+        border: 0px none;
+        background: transparent;
+        outline: none;
+        color:white;
+      }
+       
+      .tab-content {
+        margin-left: 202px;
+      }
+
+      #Home{
+         border-left: solid white 1px;
+         height:888px;
+      }
+
+      #Search{
+        border-left: solid white 1px;
+        min-height:100%;
+        height:auto;
+      }
+
+      #searchlabel{
+         background:linear-gradient(#a4241b,black); 
+         width:800px;
+         height:250px;
+         margin-left:30px
+      }
+
+      .searchTabbb:hover{
+         background-color: red; 
+      }
+      
+
+      .whole{
+         width:800px;
+         height:300px;
+         margin-top:10px;
+      }
+      
+      .boxline{
+         width:7px;
+         height:250px;
+         background-color: #a4241b;
+         margin-left: 30px;
+         margin-top:10px;
+         float: left;
+         
+      }
+      .poster{
+         width: 140px;
+         height:230px;
+         margin-left: 10px;
+         margin-top:17px;
+         float: left;
+      }
+     .sub_div{
+        float: left;
+        margin-top:14px; 
+        margin-left:10px;
+     }
+     .m_title{
+        font-size: 18px;
+        margin-left: 15px;
+        margin-top:16px;
+        color:white;
+        font-weight:bold;
+        font-family: 'Raleway', sans-serif;
+        word-wrap: break-word; 
+        width: 500px;
+
+     }
+
+     .m_year{
+       font-size: 13px;
+        margin-top:10px;
+        margin-left: 15px;
+        color:white;
+        font-family: 'Raleway', sans-serif;
+     }
+     .vote_div{
+        margin-top:2px;
+     }
+     
+     .m_vote{
+      float: left;
+      font-size: 12px;
+      margin-left: 15px;
+      color: red;
+      font-family:'Raleway', sans-serif;
+     }
+     .m_vote2{
+      float: left;
+      font-size: 12px;
+      margin-left: 5px;
+      color:white;
+      font-family: 'Raleway', sans-serif;
+     }
+     .m_overview{
+        width:570px;
+        font-size: 13px;
+        margin-top:32px;
+        margin-left: 15px;
+        color:white;
+        font-family: 'Raleway', sans-serif;
+        text-overflow: ellipsis;
+        display:-webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+     }
+
+     .m_button{
+      margin-left: 15px;
+      margin-top:15px;
+      background-color: #a4241b;
+      color: white;
+      border: 0px none;
+      width:90px;
+      height:25px;
+      border-radius:3px;
+     }
+     
+     .popup {
+         display: none; /* 默认隐藏 */
+         /*生成绝对定位的元素，相对于浏览器窗口进行定位。*/
+         position: fixed;
+         z-index: 1;
+         left: 0;
+         top: 0;
+         /*设置弹窗位置*/
+         padding-top: 50px;
+         padding-bottom: 50px;
+         /*浮在全屏上*/
+         width: 1500px;
+         height:100%;
+         overflow: auto;
+         background-color: rgb(0,0,0);
+         background-color: rgba(0,0,0,0.4);
+         
+      }
+      
+      .popup-content{
+         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+         -webkit-animation-name: animatetop;
+         -webkit-animation-duration: 0.4s;
+         animation-name: animatetop;
+         animation-duration: 0.4s;
+      }
+      
+      .cast_char_div{
+         display: inline-block;
+         margin-left: 7px;
+      }
+      
+      .charimg{
+         width:143px;
+         height:220px;
+         
+      }
+
+      .charname{
+         margin-top: 3px;
+         font-weight: bold;
+         font-size: 13px;
+         font-family: 'Raleway', sans-serif;
+         width: 143px;
+         text-align: center;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+
+      .charas{
+         font-size: 13px;
+         font-family: 'Raleway', sans-serif;
+         width: 143px;
+         text-align: center;
+      }
+      .charchar{
+         font-size: 13px;
+         font-family: 'Raleway', sans-serif;
+         width: 143px;
+         text-align: center;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+
+      .rediv{
+         margin-left: 50px;
+         margin-top: 13px;
+         width: 600px;
+      }
+
+      .rename{
+         font-weight:bold;
+         font-family: 'Raleway', sans-serif;
+         font-size:15px;
+         display: inline;
+         
+      }
+
+      .retime{
+         font-family: 'Raleway', sans-serif;
+         font-size:13px;
+         display: inline;
+      }
+
+      .rerating{
+         margin-top: 7px;
+         font-size:12px;
+         color: red;
+      }
+
+      .recontent{
+         font-family: 'Raleway', sans-serif;
+         font-size:13px;
+         width: 600px;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display:-webkit-box;
+         -webkit-line-clamp: 3;
+         -webkit-box-orient: vertical;
+      }
+
+      .reline{
+         margin-top: 6px;
+         margin-left: 70px;
+         background-color: gray;
+         width: 470px;
+         height: 1px;
+      }
+
+ </style> 
+<div>
+   <div class="title">
+        <p style="color: #a4241b; font-size: 22px;font-family: 'Raleway', sans-serif;font-weight: bold;"> THE MOVIE DB</p>
+        <div style="background:linear-gradient(to right, black,#a4241b);height:20px;width: 300px;float:right;position: absolute;top: 30px;right: 0px;"></div>
+        
+   </div>
+   <div class="tab-head">
+      <button onclick="openShow('Home','line1','button1')"  class="selected" id="button1" style="height: 60px;color:#a4241b;">Home &nbsp &nbsp &nbsp &nbsp &#10230</button>
+      <div class="Line"id="line1"style=" width: 102px;height: 1px;border-top: solid white 1px;" ></div>
+      <button onclick="openShow('Search','line2','button2')" class="selected" id="button2" style="height: 60px;">Search &nbsp &nbsp &nbsp &#10230</button>
+      <div  class="Line" id="line2" style="width: 102px;height: 1px;border-top: solid white 1px;display: none;" ></div>
+   </div>
+   <div class="tab-content">
+       <div class="show" id = "Home">
+          <span style="color:white; position: absolute;top: 80px;left: 550px;font-family: 'Raleway', sans-serif;">Trending Movies</span>
+          <div class="slides">
+              <img class="myslides1" id= "movie1" src="" width=550px; height=320px; style="position: absolute;top: 120px;left: 330px;">
+              <img class="myslides1" id= "movie2" src="" width=550px; height=320px; style="position: absolute;top: 120px;left: 330px;">
+              <img class="myslides1" id= "movie3" src="" width=550px; height=320px; style="position: absolute;top: 120px;left: 330px;">
+              <img class="myslides1" id= "movie4" src="" width=550px; height=320px; style="position: absolute;top: 120px;left: 330px;">
+              <img class="myslides1" id= "movie5" src="" width=550px; height=320px; style="position: absolute;top: 120px;left: 330px;">
+              <div class="movieTitle" id="title1" style="color:white; position: absolute;top: 385px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+                 Movie Title
+              </div>
+              <div class="movieTitle" id="title2" style="color:white; position: absolute;top: 385px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+               Movie Title
+            </div>
+            <div class="movieTitle" id="title3" style="color:white; position: absolute;top: 385px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+               Movie Title
+            </div>
+            <div class="movieTitle" id="title4" style="color:white; position: absolute;top: 385px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+               Movie Title
+            </div>
+            <div class="movieTitle" id="title5" style="color:white; position: absolute;top: 385px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+               Movie Title
+            </div>
+          </div>
+
+          <span style="color:white; position: absolute;top: 510px;left: 520px;font-family: 'Raleway', sans-serif;">TV shows On-Air Today</span>
+          <div class="slides">
+              <img class="myslides2" id="tv1"src="" width=550px; height=320px; style="position: absolute;top: 550px;left: 330px;">
+              <img class="myslides2" id="tv2"src="" width=550px; height=320px; style="position: absolute;top: 550px;left: 330px;">
+              <img class="myslides2" id="tv3"src="" width=550px; height=320px; style="position: absolute;top: 550px;left: 330px;">
+              <img class="myslides2" id="tv4"src="" width=550px; height=320px; style="position: absolute;top: 550px;left: 330px;">
+              <img class="myslides2" id="tv5"src="" width=550px; height=320px; style="position: absolute;top: 550px;left: 330px;">
+              <div class="tvTitle" id="tt1" style="color:white; position: absolute;top: 815px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+                 TV Title
+              </div>
+              <div class="tvTitle" id="tt2" style="color:white;position: absolute;top: 815px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+               TV Title
+            </div>
+            <div class="tvTitle" id="tt3" style="color:white;position: absolute;top: 815px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+               TV Title
+            </div>
+            <div class="tvTitle" id="tt4" style="color:white;position: absolute;top: 815px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;font-family: 'Raleway', sans-serif;">
+               TV Title
+            </div>
+            <div class="tvTitle" id="tt5" style="color:white;position: absolute;top: 815px;left: 330px;background-color: rgba(0,0,0,.3); width: 550px;height: 60px;z-index: 10; text-align: center; line-height: 55px;">
+               TV Title
+            </div>
+          </div>
+
+          <div style="background-color:#611610; float: right; margin-top: 848px;width:95%;height: 40px;font-size: small;text-align: right;color: white;">
+            Designed and develop by Fanlin Qin<br/>
+            Powered by TMDB
+          </div>
+
+       </div>
+       
+       <div class = "show" id = "Search" style="display: none;min-height:100%; height: auto; height: 100%; position: relative;">
+        
+        <div  id ="searchlabel" >
+            <p style="color: white;text-align: center;font-size: 24px;line-height: 55px;font-family: 'Raleway', sans-serif;">Search</p>
+            <label for="keyword" style="color: white;margin-left: 150px;font-family: 'Raleway', sans-serif;">Keyword</label><span style="color: red;">*</span>
+            <input type="text" id="keyword" name="keyword" size="50" style="border-radius:4px;border:none;"><br><br>
+            <input type="text" style="display: none;">
+            <label for="category" style="color: white;margin-left: 150px;font-family: 'Raleway', sans-serif;">Category</label><span style="color: red;">*</span>
+            <select name="category" id="category" style="margin-right:207px;border-radius:5px;">
+                <option value=""></option>
+                <option value="Movies">Movies</option>
+                <option value="TV Shows">TV Shows</option>
+                <option value="Movies and TV Shows"> Movies and TV Shows</option>
+            </select><br><br>
+            <button onclick="SearchCheck()" class="searchTabbb" style="margin-left: 320px;background-color:black;color:white;border: 0px none;width: 65px;height: 25px; border-radius:5px;">Search</button>
+            <button onclick="ClearText()" class="searchTabbb" style="margin-left: 40px;background-color: black;color: white;border: 0px none;width:55px;height: 25px;border-radius:5px;">Clear</button>
+        </div>
+        <div id="results" style="padding-bottom: 60px;" >
+             <div id="showingresults" style="color: white;margin-left: 30px;margin-top: 10px;font-family: 'Raleway', sans-serif;"></div>
+             <div id="noresults" style="color: white;margin-left: 360px;margin-top: 20px;font-family: 'Raleway', sans-serif;"></div>
+             <div id="moviebox"></div>           
+        </div>
+        
+        <div id="footer" style="position: absolute;bottom: 0;width: 98%;height:40px;background-color: #611610;color: white;font-size: small;text-align: right;margin-left: 25px;">
+           Designed and develop by Fanlin Qin<br/>
+           Powered by TMDB
+        </div>
+        <div id="popbackground" class="popup">
+            <div id="popcontent" class="popup-content">
+                  <div  style="background-color:  #cacaca; width: 700px; margin-left:300px;overflow:visible;">
+                     <img id="backimg" src="" style="width: 600px;margin-top: 20px;height: 330px;margin-left:50px">
+                     <button id="closepop" onclick="ClosePop()" style="background: transparent;float: right;border: 0px none;outline: none;">&times;</button>
+                     <div id="poptitle" style="margin-top:10px;margin-left:50px;font-family: 'Raleway', sans-serif;font-weight: bold;font-size: 21px;display: inline-block;"></div>
+                     <a id ="poplink" href="" target="_blank" style="text-decoration: none;font-size: 12px;display: inline-block;">ⓘ</a>
+                     <div id="popyear" style="margin-top:10px;margin-left:50px;font-size: 13px;font-family: 'Raleway', sans-serif;"></div>
+                     <div id="vote">
+                        <div id="votestar" style="margin-top:10px;margin-left:50px;color: red;display: inline-block;font-size: 12px;"></div>
+                        <div id="voters" style="margin-top:10px;display: inline-block;font-size: 12px;"></div>
+                     </div>
+                     <div id="popoverview" style="margin-top: 15px;margin-left: 50px;font-size: 14px;font-family: 'Raleway', sans-serif;width: 600px"></div>
+                     <div id="spoken" style="margin-top: 10px;margin-left: 50px;font-size: 13px;font-weight: 500px;font-style: italic;font-family: 'Raleway', sans-serif;width: 600px"></div>
+
+
+
+                     <div id="cast" style="margin-top: 15px;margin-left: 50px; font-weight:bold;font-family: 'Raleway', sans-serif;font-size: 21px;">Cast</div>
+                     <div id="castdiv1" style="margin-top:10px;margin-left: 50px;width: 600px;"></div>
+                     <div id="castdiv2" style="margin-top:10px;margin-left: 50px;width: 600px;"></div>
+                     
+                     <div id="reviewstitle" style="margin-top: 25px;margin-left: 50px; font-weight:bold;font-family: 'Raleway', sans-serif;font-size: 21px;">Reviews</div>
+                     <div id="reviewdiv" style="width: 600px;"></div>
+
+                     <div style="margin-top:70px;">.</div>
+                  </div>
+            </div>
+        </div>
+        </div>
+   </div>
+ </div>
+   
+<script>
+     function openShow(showName,linename,buttonname) {
+      var i;
+      var x = document.getElementsByClassName("show");
+      var y = document.getElementsByClassName("Line");
+      var k = document.getElementsByClassName("selected");
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none"; 
+         y[i].style.display ="none"; 
+         k[i].style.color ="white";
+      }
+      document.getElementById(buttonname).style.color ="#a4241b";
+      document.getElementById(linename).style.display ="block";
+      document.getElementById(showName).style.display = "block";    
+     };
+     
+
+     var movieImg = new XMLHttpRequest();
+      movieImg.open("GET","./trending", true);
+      movieImg.send();
+      movieImg.onreadystatechange = myCode;
+
+      function myCode(){
+        if (movieImg.readyState == 4 && movieImg.status == 200){
+             var doc = JSON.parse(movieImg.responseText);
+             console.log(doc);
+             //movie1+title
+             if(doc[0].backdrop_path == null){
+                    document.getElementById("movie1").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                    document.getElementById("movie1").src = "https://image.tmdb.org/t/p/w780"+doc[0].backdrop_path;
+             }
+
+             if(doc[0].release_date == ""){
+                  document.getElementById("title1").innerHTML = doc[0].title+"(N/A)";
+             }else{
+                  var timeArr = doc[0].release_date.split("-");
+                  document.getElementById("title1").innerHTML = doc[0].title+"("+ timeArr[0]+")"; 
+             }
+             
+             //movie2+tltle
+             if(doc[1].backdrop_path == null){
+               document.getElementById("movie2").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                document.getElementById("movie2").src = "https://image.tmdb.org/t/p/w780"+doc[1].backdrop_path;
+             }
+             if(doc[1].release_date == ""){
+                  document.getElementById("title2").innerHTML = doc[1].title+"(N/A)";
+             }else{
+                  var timeArr1= doc[1].release_date.split("-");
+                  document.getElementById("title2").innerHTML = doc[1].title+"("+ timeArr1[0]+")"; 
+             }
+
+             //movie3+title
+             if(doc[2].backdrop_path == null){
+                document.getElementById("movie3").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                document.getElementById("movie3").src = "https://image.tmdb.org/t/p/w780"+doc[2].backdrop_path;
+             }
+
+             if(doc[2].release_date == ""){
+                  document.getElementById("title3").innerHTML = doc[2].title+"(N/A)";
+             }else{
+                  var timeArr2 = doc[2].release_date.split("-");
+                  document.getElementById("title3").innerHTML = doc[2].title+"("+ timeArr2[0]+")"; 
+             }
+            
+             //movie4+title
+             if(doc[3].backdrop_path == null){
+               document.getElementById("movie4").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                document.getElementById("movie4").src = "https://image.tmdb.org/t/p/w780"+doc[3].backdrop_path;
+             }
+
+             if(doc[3].release_date == ""){
+                  document.getElementById("title4").innerHTML = doc[3].title+"(N/A)";
+             }else{
+                  var timeArr3 = doc[3].release_date.split("-");
+                  document.getElementById("title4").innerHTML = doc[3].title+"("+ timeArr3[0]+")"; 
+             }
+             
+             //movie5+title
+             if(doc[4].backdrop_path == null){
+               document.getElementById("movie5").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                document.getElementById("movie5").src = "https://image.tmdb.org/t/p/w780"+doc[4].backdrop_path;
+             }
+
+             if(doc[4].release_date == ""){
+                  document.getElementById("title5").innerHTML = doc[4].title+"(N/A)";
+             }else{
+                  var timeArr4 = doc[4].release_date.split("-");
+                  document.getElementById("title5").innerHTML = doc[4].title+"("+ timeArr4[0]+")"; 
+             }
+             
+         }
+       };
+
+       var slideIndex = 0;
+       carousel();
+       var slideIndex_mt = 0;
+       carousel_title();
+
+
+       function carousel() {
+         var i;
+         var x = document.getElementsByClassName("myslides1");
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {slideIndex = 1}
+      x[slideIndex-1].style.display = "block";
+      setTimeout(carousel, 4000); // Change image every 2 seconds
+     };
+
+     function carousel_title() {
+         var i;
+         var x = document.getElementsByClassName("movieTitle");
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      slideIndex_mt++;
+      if (slideIndex_mt > x.length) {slideIndex_mt = 1}
+      x[slideIndex_mt-1].style.display = "block";
+      setTimeout(carousel_title, 4000); // Change image every 2 seconds
+     };
+
+     var tvImg = new XMLHttpRequest();
+     tvImg.open("GET","./air", true);
+     tvImg.send();
+     tvImg.onreadystatechange = myCode_tv;
+     function myCode_tv(){
+        if (tvImg.readyState == 4 && tvImg.status == 200){
+             var doc = JSON.parse(tvImg.responseText);
+             console.log(doc);
+             //tv1+title
+             if(doc[0].backdrop_path == null){
+                    document.getElementById("tv1").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                    document.getElementById("tv1").src = "https://image.tmdb.org/t/p/w780"+doc[0].backdrop_path;
+             }
+
+             if(doc[0].first_air_date == ""){
+                  document.getElementById("tt1").innerHTML = doc[0].name+"(N/A)";
+             }else{
+                  var timeArr = doc[0].first_air_date.split("-");
+                  document.getElementById("tt1").innerHTML = doc[0].name+"("+ timeArr[0]+")"; 
+             }
+             
+             //tv2+title
+             if(doc[1].backdrop_path == null){
+                    document.getElementById("tv2").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                    document.getElementById("tv2").src = "https://image.tmdb.org/t/p/w780"+doc[1].backdrop_path;
+             }
+
+             if(doc[1].first_air_date == ""){
+                  document.getElementById("tt2").innerHTML = doc[1].name+"(N/A)";
+             }else{
+                  var timeArr1 = doc[1].first_air_date.split("-");
+                  document.getElementById("tt2").innerHTML = doc[1].name+"("+ timeArr1[0]+")"; 
+             }
+
+             //tv3+title
+             if(doc[2].backdrop_path == null){
+                    document.getElementById("tv3").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                    document.getElementById("tv3").src = "https://image.tmdb.org/t/p/w780"+doc[2].backdrop_path;
+             }
+
+             if(doc[2].first_air_date == ""){
+                  document.getElementById("tt3").innerHTML = doc[2].name+"(N/A)";
+             }else{
+                  var timeArr2 = doc[2].first_air_date.split("-");
+                  document.getElementById("tt3").innerHTML = doc[2].name+"("+ timeArr2[0]+")"; 
+             }
+            
+
+             //tv4+title
+             if(doc[3].backdrop_path == null){
+                    document.getElementById("tv4").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                    document.getElementById("tv4").src = "https://image.tmdb.org/t/p/w780"+doc[3].backdrop_path;
+             }
+
+             if(doc[3].first_air_date == ""){
+                  document.getElementById("tt4").innerHTML = doc[3].name+"(N/A)";
+             }else{
+                  var timeArr3 = doc[3].first_air_date.split("-");
+                  document.getElementById("tt4").innerHTML = doc[3].name+"("+ timeArr3[0]+")"; 
+             }
+             
+
+             //tv5+title
+             if(doc[4].backdrop_path == null){
+                    document.getElementById("tv5").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+             }else{
+                    document.getElementById("tv5").src = "https://image.tmdb.org/t/p/w780"+doc[4].backdrop_path;
+             }
+
+             if(doc[4].first_air_date == ""){
+                  document.getElementById("tt5").innerHTML = doc[4].name+"(N/A)";
+             }else{
+                  var timeArr4 = doc[4].first_air_date.split("-");
+                  document.getElementById("tt5").innerHTML = doc[4].name+"("+ timeArr4[0]+")"; 
+             }
+        }
+     };
+
+     var tvIndex = 0;
+     carousel_tv();
+     var tvIndex_tt = 0;
+     carousel_tt();
+
+
+       function carousel_tv() {
+         var i;
+         var x = document.getElementsByClassName("myslides2");
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      tvIndex++;
+      if (tvIndex > x.length) {tvIndex = 1}
+      x[tvIndex-1].style.display = "block";
+      setTimeout(carousel_tv, 4000); // Change image every 2 seconds
+     };
+
+     function carousel_tt() {
+         var i;
+         var x = document.getElementsByClassName("tvTitle");
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+      }
+      tvIndex_tt++;
+      if (tvIndex_tt > x.length) {tvIndex_tt = 1}
+      x[tvIndex_tt-1].style.display = "block";
+      setTimeout(carousel_tt, 4000); // Change image every 2 seconds
+     };
+
+     
+     function ClearText(){
+        document.getElementById("keyword").value = '';
+        document.getElementById("category").value = '';
+        document.getElementById("showingresults").innerHTML='';
+        document.getElementById("moviebox").innerHTML='';
+     };
+     
+     
+
+
+     function SearchCheck(){
+        var textinput = document.getElementById("keyword").value;
+        var selectinput = document.getElementById("category").value;
+        if(textinput == "" && selectinput == "" ){
+          alert("Please enter valid values");
+        }
+        if(textinput == "" && selectinput != ""){
+          alert("Please enter valid values");
+        }
+        if(textinput != "" && selectinput == ""){
+          alert("Please enter valid values");
+        }
+
+        if(textinput != "" && selectinput == "Movies"){
+           document.getElementById("moviebox").innerHTML = "";
+           document.getElementById("noresults").innerHTML="";
+           document.getElementById("showingresults").innerHTML="";
+           var req = new XMLHttpRequest(); 
+           var searchQuery = document.getElementById("keyword").value;
+           req.open("GET","/search_movies"+"?query=" + searchQuery);
+           req.send();
+           req.onreadystatechange = function(){
+              if(req.readyState == 4 && req.status == 200){
+                 var response = JSON.parse(req.responseText);
+                 if(response.length == 0){
+                    document.getElementById("noresults").innerHTML ="No results found";
+                 }else{
+                    document.getElementById("showingresults").innerHTML="Showing results...";
+                 }
+                 for(var i = 0;i<response.length;i++){
+                    //div
+                    var whole = document.createElement("div");
+                    var  att1 = document.createAttribute("id");
+                    att1.value = i;
+                    whole.setAttributeNode(att1);
+                    var at1 = document.createAttribute("class");
+                    at1.value = "whole";
+                    whole.setAttributeNode(at1);
+                    whole.innerHTML = "";
+                    document.getElementById("moviebox").appendChild(whole);
+               
+                    //line
+                    var line = document.createElement("div");
+                    var  att = document.createAttribute("class");
+                    att.value = "boxline";
+                    line.setAttributeNode(att);
+                    line.innerHTML = "";
+                    document.getElementById(i).appendChild(line);
+
+                    //poster_img
+                    var poster = document.createElement("img");
+                    var att1 = document.createAttribute("class");
+                    att1.value = "poster";
+                    poster.setAttributeNode(att1);
+                    var src = document.createAttribute("src");
+                    if(response[i].poster_path == null){
+                       src.value = "https://cinemaone.net/images/movie_placeholder.png";
+                    }else{
+                       src.value ="https://image.tmdb.org/t/p/w185"+response[i].poster_path;
+                    }
+                    poster.setAttributeNode(src);
+                    document.getElementById(i).appendChild(poster);
+                    
+                    //subdiv
+                    var sub = document.createElement("div");
+                    var sub_id = document.createAttribute("id");
+                    sub_id.value = "sub"+i;
+                    sub.setAttributeNode(sub_id);
+                    var sub_class = document.createAttribute("class");
+                    sub_class.value ="sub_div";
+                    sub.setAttributeNode(sub_class);
+                    sub.innerHTML ="";
+                    document.getElementById(i).appendChild(sub);
+                    
+                    //title
+                    var m_title = document.createElement("div");
+                    var att2 = document.createAttribute("class");
+                    att2.value = "m_title";
+                    m_title.setAttributeNode(att2);
+                    m_title.innerHTML = response[i].title;
+                    document.getElementById("sub"+i).appendChild(m_title);
+
+                    //year+genre
+                    var m_year = document.createElement("div");
+                    var att3 = document.createAttribute("class");
+                    att3.value = "m_year";
+                    m_year.setAttributeNode(att3);
+                    var gen = "";
+                    if(response[i].genre_name.length == 0){
+                         gen = "N/A";
+                    }else{
+                      for(var j = 0; j < response[i].genre_name.length;j++){
+                          var str = response[i].genre_name[j];
+                          if(j == response[i].genre_name.length - 1){
+                              gen +=str;
+                           }else{
+                           gen += str + ",";
+                           }   
+                       }
+                    }
+                    if(response[i].release_date == ""){
+                       m_year.innerHTML = "N/A" + " | " + gen;
+                    }else{
+                      var timeArr = response[i].release_date.split("-");
+                      m_year.innerHTML = timeArr[0] + " | " + gen;  
+                    }
+                    document.getElementById("sub"+i).appendChild(m_year);
+
+                    //votediv
+                    var votediv = document.createElement("div");
+                    var votediv_class = document.createAttribute("class");
+                    votediv_class.value = "vote_div";
+                    votediv.setAttributeNode(votediv_class);
+                    var votediv_id = document.createAttribute("id");
+                    votediv_id.value ="votediv"+i;
+                    votediv.setAttributeNode(votediv_id);
+                    votediv.innerHTML="";
+                    document.getElementById("sub"+i).appendChild(votediv);
+
+                    //votewrite
+                    var m_vote = document.createElement("div");
+                    var att5 = document.createAttribute("class");
+                    att5.value = "m_vote";
+                    m_vote.setAttributeNode(att5);
+                    var vote_show = response[i].vote_average / 2;
+                    m_vote.innerHTML = "★ " + vote_show +"/5";
+                    document.getElementById("votediv"+i).appendChild(m_vote);
+                  
+                    //votewrite
+                    var m_vote2 = document.createElement("div");
+                    var att6 = document.createAttribute("class");
+                    att6.value = "m_vote2";
+                    m_vote2.setAttributeNode(att6);
+                    m_vote2.innerHTML = response[i].vote_count +" votes";
+                    document.getElementById("votediv"+i).appendChild(m_vote2);
+
+                    //overview
+                    var m_overview = document.createElement("div");
+                    var att7 = document.createAttribute("class");
+                    att7.value = "m_overview";
+                    m_overview.setAttributeNode(att7);
+                    if(response[i].overview  == ""){
+                       m_overview.innerHTML="N/A";
+                    }else{
+                       m_overview.innerHTML= response[i].overview;
+                    }
+                    document.getElementById("sub"+i).appendChild(m_overview);
+
+                    //button
+                    var m_button =document.createElement("button");
+                    var att8 = document.createAttribute("class");
+                    att8.value = "m_button";
+                    m_button.setAttributeNode(att8);
+                    var m_onclick = document.createAttribute("onclick");
+                    m_onclick.value = "openwindow('movie',"+response[i].id +")";
+                    m_button.setAttributeNode(m_onclick);
+                    m_button.innerHTML="Show more";
+                    document.getElementById("sub"+i).appendChild(m_button); 
+                 };
+
+            }
+           } 
+        };
+
+        if(textinput != "" && selectinput == "TV Shows"){
+           document.getElementById("moviebox").innerHTML = "";
+           document.getElementById("noresults").innerHTML="";
+           document.getElementById("showingresults").innerHTML="";
+           var req_tv = new XMLHttpRequest(); 
+           var searchQuery_tv = document.getElementById("keyword").value;
+           req_tv.open("GET","/search_tv"+"?query=" + searchQuery_tv);
+           req_tv.send();
+           req_tv.onreadystatechange = function(){
+            if(req_tv.readyState == 4 && req_tv.status == 200){
+               var response_tv = JSON.parse(req_tv.responseText);
+                 console.log(response_tv);
+                 if(response_tv.length == 0){
+                    document.getElementById("noresults").innerHTML ="No results found";
+                 }else{
+                    document.getElementById("showingresults").innerHTML="Showing results...";
+                 }
+                 
+                 for(var i = 0;i<response_tv.length;i++){
+                    //div
+                    var whole = document.createElement("div");
+                    var  att1 = document.createAttribute("id");
+                    att1.value = i;
+                    whole.setAttributeNode(att1);
+                    var at1 = document.createAttribute("class");
+                    at1.value = "whole";
+                    whole.setAttributeNode(at1);
+                    whole.innerHTML = "";
+                    document.getElementById("moviebox").appendChild(whole);
+
+                    //line
+                    var line = document.createElement("div");
+                    var  att = document.createAttribute("class");
+                    att.value = "boxline";
+                    line.setAttributeNode(att);
+                    line.innerHTML = "";
+                    document.getElementById(i).appendChild(line); 
+
+                    //poster_img
+                    var poster = document.createElement("img");
+                    var att1 = document.createAttribute("class");
+                    att1.value = "poster";
+                    poster.setAttributeNode(att1);
+                    var src = document.createAttribute("src");
+                    if(response_tv[i].poster_path == null){
+                       src.value = "https://cinemaone.net/images/movie_placeholder.png";
+                    }else{
+                       src.value ="https://image.tmdb.org/t/p/w185"+response_tv[i].poster_path;
+                       }
+                    poster.setAttributeNode(src);
+                    document.getElementById(i).appendChild(poster);
+
+                    //subdiv
+                    var sub = document.createElement("div");
+                    var sub_id = document.createAttribute("id");
+                    sub_id.value = "sub"+i;
+                    sub.setAttributeNode(sub_id);
+                    var sub_class = document.createAttribute("class");
+                    sub_class.value ="sub_div";
+                    sub.setAttributeNode(sub_class);
+                    sub.innerHTML ="";
+                    document.getElementById(i).appendChild(sub);
+
+                    //title
+                    var m_title = document.createElement("div");
+                    var att2 = document.createAttribute("class");
+                    att2.value = "m_title";
+                    m_title.setAttributeNode(att2);
+                    m_title.innerHTML = response_tv[i].name;
+                    document.getElementById("sub"+i).appendChild(m_title);
+
+                    //year+genre
+                    var m_year = document.createElement("div");
+                    var att3 = document.createAttribute("class");
+                    att3.value = "m_year";
+                    m_year.setAttributeNode(att3); 
+                    var gen = "";
+                    if(response_tv[i].genre_name.length == 0){
+                         gen = "N/A";
+                    }else{
+                      for(var j = 0; j < response_tv[i].genre_name.length;j++){
+                          var str = response_tv[i].genre_name[j];
+                          if(j == response_tv[i].genre_name.length - 1){
+                              gen +=str;
+                           }else{
+                           gen += str + ",";
+                           }   
+                       }
+                    }
+                    if(response_tv[i].first_air_date == ""){
+                       m_year.innerHTML = "N/A" + " | " + gen;
+                    }else{
+                      var timeArr = response_tv[i].first_air_date.split("-");
+                      m_year.innerHTML = timeArr[0] + " | " + gen;  
+                    }
+                    document.getElementById("sub"+i).appendChild(m_year);
+
+                    //votediv
+                    var votediv = document.createElement("div");
+                    var votediv_class = document.createAttribute("class");
+                    votediv_class.value = "vote_div";
+                    votediv.setAttributeNode(votediv_class);
+                    var votediv_id = document.createAttribute("id");
+                    votediv_id.value ="votediv"+i;
+                    votediv.setAttributeNode(votediv_id);
+                    votediv.innerHTML="";
+                    document.getElementById("sub"+i).appendChild(votediv);
+
+                    //votewrite
+                    var m_vote = document.createElement("div");
+                    var att5 = document.createAttribute("class");
+                    att5.value = "m_vote";
+                    m_vote.setAttributeNode(att5);
+                    var vote_show = response_tv[i].vote_average / 2;
+                       m_vote.innerHTML = "★ " + vote_show +"/5";
+                    document.getElementById("votediv"+i).appendChild(m_vote);
+
+                    //votewrite
+                    var m_vote2 = document.createElement("div");
+                    var att6 = document.createAttribute("class");
+                    att6.value = "m_vote2";
+                    m_vote2.setAttributeNode(att6);
+                    m_vote2.innerHTML = response_tv[i].vote_count +" votes";
+                    document.getElementById("votediv"+i).appendChild(m_vote2);
+
+                    //overview
+                    var m_overview = document.createElement("div");
+                    var att7 = document.createAttribute("class");
+                    att7.value = "m_overview";
+                    m_overview.setAttributeNode(att7);
+                    if(response_tv[i].overview == ""){
+                       m_overview.innerHTML="N/A";
+                    }else{
+                       m_overview.innerHTML= response_tv[i].overview;
+                    }
+                    document.getElementById("sub"+i).appendChild(m_overview);
+                    
+                    //button
+                    var m_button =document.createElement("button");
+                    var att8 = document.createAttribute("class");
+                    att8.value = "m_button";
+                    m_button.setAttributeNode(att8);
+                    var m_onclick = document.createAttribute("onclick");
+                    m_onclick.value = "openwindow('tv',"+response_tv[i].id +")";
+                    m_button.setAttributeNode(m_onclick);
+                    m_button.innerHTML="Show more";
+                    document.getElementById("sub"+i).appendChild(m_button);
+                 }  
+            }
+           }
+        };
+
+        if(textinput != "" && selectinput == "Movies and TV Shows"){
+           document.getElementById("moviebox").innerHTML = "";
+           document.getElementById("noresults").innerHTML="";
+           document.getElementById("showingresults").innerHTML="";
+           var req_tm = new XMLHttpRequest(); 
+           var searchQuery_tm = document.getElementById("keyword").value;
+           req_tm.open("GET","/search_tm"+"?query=" + searchQuery_tm);
+           req_tm.send();
+           req_tm.onreadystatechange = function(){
+            if(req_tm.readyState == 4 && req_tm.status == 200){
+               var response_tm = JSON.parse(req_tm.responseText);
+                 console.log(response_tm);
+                 if(response_tm.length == 0){
+                    document.getElementById("noresults").innerHTML ="No results found";
+                 }else{
+                    document.getElementById("showingresults").innerHTML="Showing results...";
+                 }
+                
+                 for(var i = 0;i<response_tm.length;i++){
+                    //div
+                    var whole = document.createElement("div");
+                    var  att1 = document.createAttribute("id");
+                    att1.value = i;
+                    whole.setAttributeNode(att1);
+                    var at1 = document.createAttribute("class");
+                    at1.value = "whole";
+                    whole.setAttributeNode(at1);
+                    whole.innerHTML = "";
+                    document.getElementById("moviebox").appendChild(whole);
+
+                    //line
+                    var line = document.createElement("div");
+                    var  att = document.createAttribute("class");
+                    att.value = "boxline";
+                    line.setAttributeNode(att);
+                    line.innerHTML = "";
+                    document.getElementById(i).appendChild(line);
+
+                    //poster_img
+                    var poster = document.createElement("img");
+                    var att1 = document.createAttribute("class");
+                    att1.value = "poster";
+                    poster.setAttributeNode(att1);
+                    var src = document.createAttribute("src");
+                    if(response_tm[i].poster_path == null){
+                       src.value = "https://cinemaone.net/images/movie_placeholder.png";
+                    }else{
+                       src.value ="https://image.tmdb.org/t/p/w185"+response_tm[i].poster_path;
+                       }
+                    poster.setAttributeNode(src);
+                    document.getElementById(i).appendChild(poster);
+
+                    //subdiv
+                    var sub = document.createElement("div");
+                    var sub_id = document.createAttribute("id");
+                    sub_id.value = "sub"+i;
+                    sub.setAttributeNode(sub_id);
+                    var sub_class = document.createAttribute("class");
+                    sub_class.value ="sub_div";
+                    sub.setAttributeNode(sub_class);
+                    sub.innerHTML ="";
+                    document.getElementById(i).appendChild(sub);
+
+                    //title
+                    var m_title = document.createElement("div");
+                    var att2 = document.createAttribute("class");
+                    att2.value = "m_title";
+                    m_title.setAttributeNode(att2);
+                    m_title.innerHTML = response_tm[i].name_tm;
+                    document.getElementById("sub"+i).appendChild(m_title);
+
+                    //year+genre
+                    var m_year = document.createElement("div");
+                    var att3 = document.createAttribute("class");
+                    att3.value = "m_year";
+                    m_year.setAttributeNode(att3); 
+                    var gen = "";
+                    if(response_tm[i].genre_name.length == 0){
+                         gen = "N/A";
+                    }else{
+                      for(var j = 0; j < response_tm[i].genre_name.length;j++){
+                          var str = response_tm[i].genre_name[j];
+                          if(j == response_tm[i].genre_name.length - 1){
+                              gen +=str;
+                           }else{
+                           gen += str + ",";
+                           }   
+                       }
+                    }
+                    if(response_tm[i].date_tm == ""){
+                       m_year.innerHTML = "N/A" + " | " + gen;
+                    }else{
+                      var timeArr = response_tm[i].date_tm.split("-");
+                      m_year.innerHTML = timeArr[0] + " | " + gen;
+                    }
+                    document.getElementById("sub"+i).appendChild(m_year);
+
+                    //votediv
+                    var votediv = document.createElement("div");
+                    var votediv_class = document.createAttribute("class");
+                    votediv_class.value = "vote_div";
+                    votediv.setAttributeNode(votediv_class);
+                    var votediv_id = document.createAttribute("id");
+                    votediv_id.value ="votediv"+i;
+                    votediv.setAttributeNode(votediv_id);
+                    votediv.innerHTML="";
+                    document.getElementById("sub"+i).appendChild(votediv);
+
+                    //votewrite
+                    var m_vote = document.createElement("div");
+                    var att5 = document.createAttribute("class");
+                    att5.value = "m_vote";
+                    m_vote.setAttributeNode(att5);
+                    var vote_show = response_tm[i].vote_average / 2;
+                    m_vote.innerHTML = "★ " + vote_show +"/5";
+                    document.getElementById("votediv"+i).appendChild(m_vote);
+
+                    //votewrite
+                    var m_vote2 = document.createElement("div");
+                    var att6 = document.createAttribute("class");
+                    att6.value = "m_vote2";
+                    m_vote2.setAttributeNode(att6);
+                    m_vote2.innerHTML = response_tm[i].vote_count +" votes";
+                    document.getElementById("votediv"+i).appendChild(m_vote2);
+
+                    //overview
+                    var m_overview = document.createElement("div");
+                    var att7 = document.createAttribute("class");
+                    att7.value = "m_overview";
+                    m_overview.setAttributeNode(att7);
+                    if(response_tm[i].overview == ""){
+                       m_overview.innerHTML="N/A";
+                    }else{
+                       m_overview.innerHTML= response_tm[i].overview;
+                    }
+                    document.getElementById("sub"+i).appendChild(m_overview);
+                    
+                    //button
+                    var m_button =document.createElement("button");
+                    var att8 = document.createAttribute("class");
+                    att8.value = "m_button";
+                    m_button.setAttributeNode(att8);
+                    var m_onclick = document.createAttribute("onclick");
+                    if(response_tm[i].type == "tv"){
+                       m_onclick.value = "openwindow('tv',"+response_tm[i].id +")";
+                    }else{
+                       m_onclick.value ="openwindow('movie',"+response_tm[i].id +")";
+                    }
+                    m_button.setAttributeNode(m_onclick);
+                    m_button.innerHTML="Show more";
+                    document.getElementById("sub"+i).appendChild(m_button);
+                 }
+
+            }
+           }
+        };
+       };
+        
+       function openwindow(category,id){
+         var popup = document.getElementById('popbackground');
+         popup.style.display = "block";
+         var body = document.getElementsByTagName("body")[0];
+         body.setAttribute("style", "overflow:hidden;background-color:black");
+         window.onclick = function(event) {
+          if (event.target == popup) {
+             popup.style.display = "none";
+             body.setAttribute("style", "overflow:visible;background-color:black");
+             document.getElementById("castdiv1").innerHTML = '';
+             document.getElementById("castdiv2").innerHTML ='';
+             document.getElementById("reviewdiv").innerHTML ='';
+
+            }  
+         };
+         console.log("category is: ", category + "/ id is: "+ id);
+         getMovieDetails(category, id);
+       };
+
+       function getMovieDetails(category,id){
+           if(category == "movie"){
+            //Details
+            var req = new XMLHttpRequest(); 
+            var searchID = id;
+            req.open("GET","/pop_movies"+"?query=" + searchID);
+            req.send();
+            req.onreadystatechange = function(){
+               if(req.readyState == 4 && req.status == 200){
+                 var response = JSON.parse(req.responseText);
+                 console.log(response);
+                 //backimg
+                 if(response[0].backdrop_path == null){
+                    document.getElementById("backimg").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+                 }else{
+                    document.getElementById("backimg").src = "https://image.tmdb.org/t/p/w780"+response[0].backdrop_path;
+                 };
+
+                 //title
+                 document.getElementById("poptitle").innerHTML=response[0].title;
+                 document.getElementById("poplink").href = "https://www.themoviedb.org/movie/"+id;
+
+                 //year
+                 var gen = "";
+                 if(response[0].genres.length == 0){
+                         gen = "N/A";
+                  }else{
+                       for(var i = 0; i < response[0].genres.length;i++){
+                           var str = response[0].genres[i].name;
+                           if(i == response[0].genres.length - 1){
+                              gen +=str;
+                           }else{
+                              gen += str + ",";
+                           } 
+                        }
+                     }
+                  if(response[0].release_date== ""){ 
+                        document.getElementById("popyear").innerHTML = "N/A" + " | " + gen;
+                  }else{
+                        var timeArr = response[0].release_date.split("-");
+                        document.getElementById("popyear").innerHTML = timeArr[0] + " | " + gen;
+                  }
+
+                  //vote
+                  var vote_show = response[0].vote_average / 2;
+                  document.getElementById("votestar").innerHTML = "★ " + vote_show +"/5";
+                  document.getElementById("voters").innerHTML =response[0].vote_count +" votes";
+
+                  //overview
+                  if(response[0].overview ==""){
+                        document.getElementById("popoverview").innerHTML = "N/A";
+                  }else{
+                        document.getElementById("popoverview").innerHTML = response[0].overview;
+                  }
+
+                  //spoken
+                  var speak = "";
+                  if(response[0].spoken_languages.length == 0){
+                        speak="N/A";
+                  }else{
+                     for(var i = 0; i< response[0].spoken_languages.length;i++){
+                        var str = response[0].spoken_languages[i].english_name;
+                        if(i == response[0].spoken_languages.length - 1){
+                              speak +=str;
+                        }else{
+                           speak += str + ",";
+                        } 
+                     }
+                  }
+                  document.getElementById("spoken").innerHTML = "Spoken languages: " + speak;  
+               }  
+            };
+            
+            //credits
+            var req_cre = new XMLHttpRequest(); 
+            var searchID = id;
+            req_cre.open("GET","/pop_m_credits"+"?query=" + searchID);
+            req_cre.send();
+            req_cre.onreadystatechange = function(){
+               if(req_cre.readyState == 4 && req_cre.status == 200){
+                 var re_cre = JSON.parse(req_cre.responseText);
+                 console.log(re_cre);
+                 if(re_cre.length == 0){
+                        document.getElementById("castdiv1").innerHTML="N/A";
+                 }
+                 if(re_cre.length > 0){
+                   for(var i= 0;i<re_cre.length;i++){
+                        //char
+                        var char = document.createElement("div");
+                        var char_id =document.createAttribute("id");
+                        char_id.value = "char" + i;
+                        char.setAttributeNode(char_id);
+                        var char_class = document.createAttribute("class");
+                        char_class.value ="cast_char_div";
+                        char.setAttributeNode(char_class);
+                        char.innerHTML ="";
+                        if(i<4){
+                           document.getElementById("castdiv1").appendChild(char);
+                        }else{
+                           document.getElementById("castdiv2").appendChild(char);
+                        }
+                           
+                        //charimg
+                        var profile = document.createElement("img");
+                        var att1 = document.createAttribute("class");
+                        att1.value = "charimg";
+                        profile.setAttributeNode(att1);
+                        var src = document.createAttribute("src");
+                        if(re_cre[i].profile_path == null){
+                           src.value = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/person-placeholder.png";
+                        }else{
+                           src.value = "https://image.tmdb.org/t/p/w185"+re_cre[i].profile_path;
+                        }
+                        profile.setAttributeNode(src);
+                        document.getElementById("char"+i).appendChild(profile);
+
+                        //charname
+                        var m_title = document.createElement("div");
+                        var att2 = document.createAttribute("class");
+                        att2.value = "charname";
+                        m_title.setAttributeNode(att2);
+                        if(re_cre[i.name == ""]){
+                           m_title.innerHTML ="N/A";
+                        }else{
+                           m_title.innerHTML = re_cre[i].name;
+                        }
+                        document.getElementById("char"+i).appendChild(m_title);
+
+                        //AS
+                        var m_as = document.createElement("div");
+                        var att3 = document.createAttribute("class");
+                        att3.value = "charas";
+                        m_as.setAttributeNode(att3);
+                        m_as.innerHTML = "AS";
+                        document.getElementById("char"+i).appendChild(m_as);
+
+                        //character
+                        var m_cc = document.createElement("div");
+                        var att4 = document.createAttribute("class");
+                        att4.value = "charchar";
+                        m_cc.setAttributeNode(att4);
+                        if(re_cre[i].character == ""){
+                           m_cc.innerHTML = "N/A";
+                        }else{
+                           m_cc.innerHTML = re_cre[i].character;
+                        }
+                        document.getElementById("char"+i).appendChild(m_cc);
+                     } 
+                  }
+               }
+            };
+
+            //Re
+            var req_rev = new XMLHttpRequest(); 
+            var searchID = id;
+            req_rev.open("GET","/pop_m_reviews"+"?query=" + searchID);
+            req_rev.send();
+            req_rev.onreadystatechange = function(){
+               if(req_rev.readyState == 4 && req_rev.status == 200){
+                 var response = JSON.parse(req_rev.responseText);
+                 console.log(response);
+                 if(response.length == 0){
+                     document.getElementById("reviewdiv").style.marginLeft="50px";
+                     document.getElementById("reviewdiv").innerHTML="N/A";
+                 }
+                 if(response.length > 0){
+                        console.log("test");
+                        for(var i = 0;i<response.length;i++){
+                        //wholediv
+                        var whole = document.createElement("div");
+                        var att0 = document.createAttribute("class");
+                        att0.value = "rediv";
+                        whole.setAttributeNode(att0);
+                        var whole_id =document.createAttribute("id");
+                        whole_id.value = "rediv" + i;
+                        whole.setAttributeNode(whole_id);
+                        whole.innerHTML = "";
+                        document.getElementById("reviewdiv").appendChild(whole);
+                        
+                        //name
+                        var name = document.createElement("div");
+                        var att1 = document.createAttribute("class");
+                        att1.value = "rename";
+                        name.setAttributeNode(att1);
+                        if(response[i].username == ""){
+                           name.innerHTML = "N/A";
+                        }else{
+                           name.innerHTML = response[i].username;
+                        }
+                        document.getElementById("rediv"+i).appendChild(name);
+
+                        //time
+                        var time = document.createElement("div");
+                        var att2 = document.createAttribute("class");
+                        att2.value = "retime";
+                        time.setAttributeNode(att2);
+                        if(response[i].created_at == ""){
+                           time.innerHTML = "N/A";
+                        }else{
+                           var timeArr = response[i].created_at.split("T");
+                           var time_true = timeArr[0].split("-");
+                           time.innerHTML = " on "+ time_true[2] + "/" +time_true[1] + "/"+time_true[0];
+                        }
+                        document.getElementById("rediv"+i).appendChild(time);
+
+                        //rating
+                        var rating = document.createElement("div");
+                        var att3 = document.createAttribute("class");
+                        att3.value = "rerating";
+                        rating.setAttributeNode(att3);
+                        var rating_true = response[i].rating / 2;
+                        if(rating_true == 0){
+                            rating.innerHTML = "";
+                        }else{
+                            rating.innerHTML ="★ " + rating_true +"/5";
+                        }
+                        document.getElementById("rediv"+i).appendChild(rating);
+
+                        //content
+                        var content = document.createElement("div");
+                        var att4 = document.createAttribute("class");
+                        att4.value = "recontent";
+                        content.setAttributeNode(att4);
+                        if(response[i].content == ""){
+                           content.innerHTML = "N/A";
+                        }else{
+                           content.innerHTML = response[i].content;
+                        }
+                        document.getElementById("rediv"+i).appendChild(content);
+
+                        //line
+                        var reline = document.createElement("div");
+                        var att5 = document.createAttribute("class");
+                        att5.value = "reline";
+                        reline.setAttributeNode(att5);
+                        reline.innerHTML = "";
+                        document.getElementById("rediv"+i).appendChild(reline);
+                        }
+                     } 
+               }
+             }
+           }//ifmovie
+           
+           if(category == "tv"){
+              //Details
+              var req = new XMLHttpRequest(); 
+              var searchID = id;
+              req.open("GET","/pop_tvs"+"?query=" + searchID);
+              req.send();
+              req.onreadystatechange = function(){
+                  if(req.readyState == 4 && req.status == 200){
+                     var response = JSON.parse(req.responseText);
+                     console.log(response);
+                     //backimg
+                     if(response[0].backdrop_path == null){
+                        document.getElementById("backimg").src = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg";
+                     }else{
+                        document.getElementById("backimg").src = "https://image.tmdb.org/t/p/w780"+response[0].backdrop_path;
+                     };
+
+                     //title
+                     document.getElementById("poptitle").innerHTML=response[0].name;
+                     document.getElementById("poplink").href = "https://www.themoviedb.org/tv/"+id;
+
+                     //year
+                     var gen = "";
+                     if(response[0].genres.length == 0){
+                         gen = "N/A";
+                     }else{
+                       for(var i = 0; i < response[0].genres.length;i++){
+                           var str = response[0].genres[i].name;
+                           if(i == response[0].genres.length - 1){
+                              gen +=str;
+                           }else{
+                              gen += str + ",";
+                           } 
+                        }
+                     }
+                     if(response[0].first_air_date == ""){
+                        document.getElementById("popyear").innerHTML = "N/A" + " | " + gen;
+                     }else{
+                        var timeArr = response[0].first_air_date.split("-");
+                        document.getElementById("popyear").innerHTML = timeArr[0] + " | " + gen;
+                     }
+
+                     //vote
+                     var vote_show = response[0].vote_average / 2;
+                     document.getElementById("votestar").innerHTML = "★ " + vote_show +"/5";
+                     document.getElementById("voters").innerHTML =response[0].vote_count +" votes";
+
+                     //overview
+                     if(response[0].overview ==""){
+                        document.getElementById("popoverview").innerHTML = "N/A";
+                     }else{
+                        document.getElementById("popoverview").innerHTML = response[0].overview;
+                     }
+                     
+
+                     //spoken
+                     var speak = "";
+                     if(response[0].spoken_languages.length == 0){
+                        speak="N/A";
+                     }else{
+                        for(var i = 0; i< response[0].spoken_languages.length;i++){
+                        var str = response[0].spoken_languages[i].english_name;
+                        if(i == response[0].spoken_languages.length - 1){
+                              speak +=str;
+                        }else{
+                           speak += str + ",";
+                        } 
+                        }
+                     }
+                     document.getElementById("spoken").innerHTML = "Spoken languages: " + speak;
+                  }
+               };
+               
+               //credits
+               var req_cre = new XMLHttpRequest(); 
+               var searchID = id;
+               req_cre.open("GET","/pop_tv_credits"+"?query=" + searchID);
+               req_cre.send();
+               req_cre.onreadystatechange = function(){
+                  if(req_cre.readyState == 4 && req_cre.status == 200){
+                  var re_cre = JSON.parse(req_cre.responseText);
+                  console.log(re_cre); 
+                  if(re_cre.length == 0){
+                        document.getElementById("castdiv1").innerHTML="N/A";
+                  }
+                  if(re_cre.length > 0){                 
+                   for(var i= 0;i<re_cre.length;i++){
+                        //char
+                        var char = document.createElement("div");
+                        var char_id =document.createAttribute("id");
+                        char_id.value = "char" + i;
+                        char.setAttributeNode(char_id);
+                        var char_class = document.createAttribute("class");
+                        char_class.value ="cast_char_div";
+                        char.setAttributeNode(char_class);
+                        char.innerHTML ="";
+                        if(i<4){
+                           document.getElementById("castdiv1").appendChild(char);
+                        }else{
+                           document.getElementById("castdiv2").appendChild(char);
+                        }
+                           
+                        //charimg
+                        var profile = document.createElement("img");
+                        var att1 = document.createAttribute("class");
+                        att1.value = "charimg";
+                        profile.setAttributeNode(att1);
+                        var src = document.createAttribute("src");
+                        if(re_cre[i].profile_path == null){
+                           src.value = "https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/person-placeholder.png";
+                        }else{
+                           src.value = "https://image.tmdb.org/t/p/w185"+re_cre[i].profile_path;
+                        }
+                        profile.setAttributeNode(src);
+                        document.getElementById("char"+i).appendChild(profile);
+
+                        //charname
+                        var m_title = document.createElement("div");
+                        var att2 = document.createAttribute("class");
+                        att2.value = "charname";
+                        m_title.setAttributeNode(att2);
+                        if(re_cre[i.name == ""]){
+                           m_title.innerHTML ="N/A";
+                        }else{
+                           m_title.innerHTML = re_cre[i].name;
+                        }
+                        document.getElementById("char"+i).appendChild(m_title);
+
+                        //AS
+                        var m_as = document.createElement("div");
+                        var att3 = document.createAttribute("class");
+                        att3.value = "charas";
+                        m_as.setAttributeNode(att3);
+                        m_as.innerHTML = "AS";
+                        document.getElementById("char"+i).appendChild(m_as);
+
+                        //character
+                        var m_cc = document.createElement("div");
+                        var att4 = document.createAttribute("class");
+                        att4.value = "charchar";
+                        m_cc.setAttributeNode(att4);
+                        if(re_cre[i].character == ""){
+                           m_cc.innerHTML = "N/A";
+                        }else{
+                           m_cc.innerHTML = re_cre[i].character;
+                        }
+                        document.getElementById("char"+i).appendChild(m_cc);
+                     }
+                   }
+                 }
+               };
+
+               //Re
+               var req_rev = new XMLHttpRequest(); 
+               var searchID = id;
+               req_rev.open("GET","/pop_tv_reviews"+"?query=" + searchID);
+               req_rev.send();
+               req_rev.onreadystatechange = function(){
+                  if(req_rev.readyState == 4 && req_rev.status == 200){
+                     var response = JSON.parse(req_rev.responseText);
+                     console.log(response);
+                     if(response.length == 0){
+                        document.getElementById("reviewdiv").style.marginLeft="50px";
+                        document.getElementById("reviewdiv").innerHTML="N/A";
+                     }
+                     if(response.length > 0){
+                        console.log("test");
+                        for(var i = 0;i<response.length;i++){
+                        //wholediv
+                        var whole = document.createElement("div");
+                        var att0 = document.createAttribute("class");
+                        att0.value = "rediv";
+                        whole.setAttributeNode(att0);
+                        var whole_id =document.createAttribute("id");
+                        whole_id.value = "rediv" + i;
+                        whole.setAttributeNode(whole_id);
+                        whole.innerHTML = "";
+                        document.getElementById("reviewdiv").appendChild(whole);
+                        
+                        //name
+                        var name = document.createElement("div");
+                        var att1 = document.createAttribute("class");
+                        att1.value = "rename";
+                        name.setAttributeNode(att1);
+                        if(response[i].username == ""){
+                           name.innerHTML = "N/A";
+                        }else{
+                           name.innerHTML = response[i].username;
+                        }
+                        document.getElementById("rediv"+i).appendChild(name);
+
+                        //time
+                        var time = document.createElement("div");
+                        var att2 = document.createAttribute("class");
+                        att2.value = "retime";
+                        time.setAttributeNode(att2);
+                        if(response[i].created_at == ""){
+                           time.innerHTML = "N/A";
+                        }else{
+                           var timeArr = response[i].created_at.split("T");
+                           var time_true = timeArr[0].split("-");
+                           time.innerHTML = "on "+ time_true[2] + "/" +time_true[1] + "/"+time_true[0];
+                        }
+                        document.getElementById("rediv"+i).appendChild(time);
+
+                        //rating
+                        var rating = document.createElement("div");
+                        var att3 = document.createAttribute("class");
+                        att3.value = "rerating";
+                        rating.setAttributeNode(att3);
+                        var rating_true = response[i].rating / 2;
+                        if(rating_true == 0){
+                            rating.innerHTML = "";
+                        }else{
+                            rating.innerHTML ="★ " + rating_true +"/5";
+                        }
+                        document.getElementById("rediv"+i).appendChild(rating);
+
+                        //content
+                        var content = document.createElement("div");
+                        var att4 = document.createAttribute("class");
+                        att4.value = "recontent";
+                        content.setAttributeNode(att4);
+                        if(response[i].content == ""){
+                           content.innerHTML = "N/A";
+                        }else{
+                           content.innerHTML = response[i].content;
+                        }
+                        document.getElementById("rediv"+i).appendChild(content);
+
+                        //line
+                        var reline = document.createElement("div");
+                        var att5 = document.createAttribute("class");
+                        att5.value = "reline";
+                        reline.setAttributeNode(att5);
+                        reline.innerHTML = "";
+                        document.getElementById("rediv"+i).appendChild(reline);
+                        }
+                     }
+
+
+                  }
+               }
+            }//iftv的
+
+
+         }//function
+       
+       function ClosePop(){
+         var popup = document.getElementById('popbackground');
+         var body = document.getElementsByTagName("body")[0];
+         popup.style.display = "none";
+         body.setAttribute("style", "overflow:visible;background-color:black");
+         document.getElementById("castdiv1").innerHTML = '';
+         document.getElementById("castdiv2").innerHTML ='';
+         document.getElementById("reviewdiv").style.marginLeft="0px";
+         document.getElementById("reviewdiv").innerHTML ='';
+       }
+
+
+  </script>
+</body>
+</html>
